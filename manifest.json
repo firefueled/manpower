@@ -17,6 +17,22 @@
     }
   },
 
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/men-32.png",
+    "default_title": "ManPower",
+    "default_popup": "popup/choose_man.html"
+  },
+
+  "web_accessible_resources": [
+    "men/git",
+    "men/ls",
+    "men/grep"
+  ],
+
   "content_scripts": [
     {
       "matches": ["*://*.mozilla.org/*"],
