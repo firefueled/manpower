@@ -1,13 +1,16 @@
 {
-
   "manifest_version": 2,
   "name": "ManPower",
   "version": "0.1",
- 
   "description": "View man pages",
+
   "icons": {
     "48": "icons/manpower-48.png",
     "96": "icons/manpower-96.png"
+  },
+
+  "background": {
+    "scripts": ["manup.js"]
   },
 
   "applications": {
@@ -18,26 +21,22 @@
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "webNavigation"
   ],
 
   "browser_action": {
     "default_icon": "icons/men-32.png",
-    "default_title": "ManPower",
-    "default_popup": "popup/choose_man.html"
+    "default_title": "ManPower"
   },
 
   "web_accessible_resources": [
-    "men/git",
-    "men/ls",
-    "men/grep"
   ],
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["manpower.js"]
+  "commands": {
+    "manup": {
+      "suggested_key": { "default": "Ctrl+Shift+L" },
+      "description": "Manup!"
     }
-  ]
-
+  }
 }
